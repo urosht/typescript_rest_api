@@ -1,3 +1,12 @@
 # Typescript, Express +  MongoDB REST API
 
-Key pair needs to be generated and added to the config before using the app
+## Requirements
+- Node.js
+- Mongo DB
+
+
+## Postman
+Postman collection is available to interact with this Demo:
+1. Create a user
+2. Create a session
+3. Do CRUD operations with the Product
