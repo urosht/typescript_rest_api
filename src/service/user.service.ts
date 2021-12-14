@@ -22,7 +22,7 @@ export async function validatePassword({email, password}: {email: string, passwo
 
     if (!isValid) { return false; }
 
-    return omit(user.toJSON(), "password");
+    return omit(user, "password");
 }
 
 export async function findUser(query: FilterQuery<UserDocument>) {

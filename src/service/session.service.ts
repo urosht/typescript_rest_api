@@ -20,7 +20,7 @@ export async function updateSession(query: FilterQuery<SessionDocument>, update:
 }
 
 export async function reIssueAccessToken({ refreshToken }: {refreshToken: string}) {
-    const { decoded } = verifyJWT(refreshToken);
+    const { decoded } = verifyJWT(refreshToken, "refreshTokenPublicKey");
 
     if (!decoded || !get(decoded, "_id")) {
         return false;
@@ -37,6 +37,7 @@ export async function reIssueAccessToken({ refreshToken }: {refreshToken: string
 
     const accessToken = signJWT(
         { ...user, session: session._id },
+        "accessTokenPrivateKey",
         { expiresIn: config.get("accessTokenTtl") } // 15min
     );
     return accessToken;
