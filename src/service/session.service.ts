@@ -1,6 +1,6 @@
 import { get } from "lodash";
 import { FilterQuery, UpdateQuery } from "mongoose";
-import Session, { SessionDocument } from "../models/session.model";
+import Session, { SessionDocument } from "../model/session.model";
 import { verifyJWT, signJWT } from "../utils/jwt.utils";
 import { findUser } from "./user.service";
 import config from "config";

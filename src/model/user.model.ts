@@ -13,7 +13,6 @@ export interface UserDocument extends UserInput, mongoose.Document {
     comparePassword(candidatePassword: string): Promise<Boolean>
 }
 
-
 // schema definition
 const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
